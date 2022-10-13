@@ -49,12 +49,20 @@ const shoppingList = [
 // let counter = 0;
 let i = 0;
 while (i < shoppingList.length) {
+    const ulEl = document.querySelector(`.col:nth-child(${i + 1}) ul`);
     let j = 1;
 
+    // Intestazione colonne
     console.log(shoppingList[i][0]);
+    ulEl.innerHTML = `<li>${shoppingList[i][0]}</li>`;
 
     while (j < shoppingList[i].length) {
+        const liEl = `<li>${shoppingList[i][j]}</li>`
+
+        // Elemento della lista
         console.log(" - ", shoppingList[i][j]);
+        ulEl.innerHTML += liEl;
+
         j++;
         // counter++;
     }
